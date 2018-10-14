@@ -8,6 +8,7 @@ import android.content.Context
 import com.trasimus.menu.objects.AddOn
 import com.trasimus.menu.objects.Meal
 
+//Database initialise
 @Database(entities = [(AddOn::class), (Meal::class)], version = 1)
 @TypeConverters(ArrayListTypeConverter::class)
 abstract class AppDatabase : RoomDatabase() {

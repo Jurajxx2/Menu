@@ -12,7 +12,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:text="Hranolky"
+        android:text="@string/sampleAddOnName"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/addOnSizeHeading"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:text="Porcia: "
+        android:text="@string/addOnSizeHeading"
         app:layout_constraintBottom_toTopOf="@+id/addOnPriceHeading"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addOn" />
@@ -33,7 +33,7 @@
         android:id="@+id/addOnSize"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:text="100g"
+        android:text="@string/addOnSampleSize"
         app:layout_constraintBottom_toTopOf="@+id/addOnPrice"
         app:layout_constraintStart_toEndOf="@+id/addOnSizeHeading"
         app:layout_constraintTop_toBottomOf="@+id/addOn" />
@@ -45,7 +45,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="8dp"
-        android:text="Cena: "
+        android:text="@string/addOnPriceHeading"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addOnSizeHeading" />
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:text="3"
+        android:text="@string/addOnSamplePrice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addOnPriceHeading"
         app:layout_constraintTop_toBottomOf="@+id/addOnSize" />
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:text="€"
+        android:text="@string/currency"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addOnPrice"
         app:layout_constraintTop_toBottomOf="@+id/addOnSize" />

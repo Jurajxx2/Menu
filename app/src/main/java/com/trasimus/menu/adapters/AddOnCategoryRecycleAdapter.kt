@@ -18,6 +18,7 @@ import com.hendraanggrian.widget.ExpandableRecyclerView
 class AddOnCategoryRecycleAdapter(private val addOnList: ArrayList<AddOn>, private val context: Context, private val layoutManager: LinearLayoutManager) : ExpandableRecyclerView.Adapter<AddOnCategoryRecycleAdapter.MyViewHolder>(layoutManager) {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        //Viewholder for addon category row layout - expendable item is main holder
         private val item: ExpandableItem = view.findViewById(R.id.addOnRow) as ExpandableItem
         var title: TextView = item.headerLayout.findViewById(R.id.addOnCategory)
         var addOns: RecyclerView = item.contentLayout.findViewById(R.id.addOnList)
@@ -32,8 +33,10 @@ class AddOnCategoryRecycleAdapter(private val addOnList: ArrayList<AddOn>, priva
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         super.onBindViewHolder(holder, position)
-        var categoryAddOns: ArrayList<AddOn> = arrayListOf()
+        //Arraylist initialisation
+        val categoryAddOns: ArrayList<AddOn> = arrayListOf()
 
+        //Get addons with unique categories
         var addOn = AddOn()
         var category = ""
         var order = 0
@@ -51,10 +54,13 @@ class AddOnCategoryRecycleAdapter(private val addOnList: ArrayList<AddOn>, priva
             }
         }
 
+        //Assign addon type to view
         holder.title.text = addOn.type
 
+        //Adjust height by content
         holder.addOns.layoutParams.height = ConstraintLayout.LayoutParams.WRAP_CONTENT
 
+        //Assign adapter recycler view
         val mAdapter = AddOnRecyclerAdapter(categoryAddOns)
         val mLayoutManager = LinearLayoutManager(context)
         holder.addOns.layoutManager = mLayoutManager
@@ -63,6 +69,7 @@ class AddOnCategoryRecycleAdapter(private val addOnList: ArrayList<AddOn>, priva
     }
 
     override fun getItemCount(): Int {
+        //Get addons with unique types
         var category = ""
         var size = 0
         addOnList.forEach {

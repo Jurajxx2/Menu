@@ -32,22 +32,26 @@ class AddOns : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_ons)
 
+        //Get intent extras with addons data
         extras = intent.extras
         mealAddOns = extras.getStringArrayList("addons")
         addOns = arrayListOf()
 
+        //Get database instance
         database = AppDatabase.getInstance(this)
 
         doAsync {
 
+            //Get addons from database
             mealAddOns.forEach {
                 addOns.add(database.addOnModel().getAddOnByID(it))
             }
 
             uiThread {
-                var recyclerView = findViewById<com.hendraanggrian.widget.ExpandableRecyclerView>(R.id.addOnCategoryList)
+                //Initialise recycler view with data
+                val recyclerView = findViewById<com.hendraanggrian.widget.ExpandableRecyclerView>(R.id.addOnCategoryList)
                 val mLayoutManager = LinearLayoutManager(applicationContext)
-                var mAdapter = AddOnCategoryRecycleAdapter(addOns, this@AddOns, mLayoutManager)
+                val mAdapter = AddOnCategoryRecycleAdapter(addOns, this@AddOns, mLayoutManager)
                 recyclerView!!.layoutManager = mLayoutManager
                 recyclerView.itemAnimator = DefaultItemAnimator()
                 recyclerView.adapter = mAdapter

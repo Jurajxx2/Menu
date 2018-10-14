@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Menu</string>
+    <string name="sampleMealName">Slepačí vývar</string>
+    <string name="sampleMealSize">500ml</string>
+    <string name="sampleMealPrice">10</string>
+    <string name="showAddons">Zobraziť  prílohy</string>
+    <string name="mealSizeHeading">Porcia:</string>
+    <string name="mealPriceHeading">Cena:</string>
+    <string name="currency">€</string>
+    <string name="sampleMealCategory">PALACINKY</string>
+    <string name="sampleAddOnName">Hranolky</string>
+    <string name="addOnSizeHeading">Porcia:</string>
+    <string name="addOnSampleSize">100g</string>
+    <string name="addOnPriceHeading">Cena:</string>
+    <string name="addOnSamplePrice">3</string>
+    <string name="sampleAddOnCategory">PALACINKY</string>
+
+    <string name="addOnsActivityLabel">Prílohy</string>
+    <string name="cutleryImageDescription">Cutlery image next to heading</string>
+    <string name="addOnIcon">Side dishes icon</string>
 </resources>

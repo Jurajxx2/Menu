@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.meal_row.view.*
 class AddOnRecyclerAdapter(private val addOnList: List<AddOn>) : RecyclerView.Adapter<AddOnRecyclerAdapter.MyViewHolder>() {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        //Viewholder for add on row layout
         var title: TextView = view.findViewById(R.id.addOn)
         var size: TextView = view.findViewById(R.id.addOnSize)
         var price: TextView = view.findViewById(R.id.addOnPrice)
@@ -26,6 +27,7 @@ class AddOnRecyclerAdapter(private val addOnList: List<AddOn>) : RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        //Assigning values to views
         holder.title.text = addOnList[position].name
         holder.size.text = addOnList[position].size
         holder.price.text = addOnList[position].price.toString()

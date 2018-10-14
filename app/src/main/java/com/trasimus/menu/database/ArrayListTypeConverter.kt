@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken
 import com.trasimus.menu.objects.Meal
 import java.time.Instant
 
+//Type converter to serialize and deserialize arraylist to be able to be writable to sqlite database
 class ArrayListTypeConverter {
     companion object {
         @TypeConverter

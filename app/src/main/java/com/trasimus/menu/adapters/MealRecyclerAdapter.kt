@@ -17,6 +17,7 @@ import org.jetbrains.anko.sdk27.coroutines.onClick
 class MealRecyclerAdapter(private val mealList: List<Meal>, private val context: Context) : RecyclerView.Adapter<MealRecyclerAdapter.MyViewHolder>() {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        //Viewholder for meal_row layout
         var title: TextView = view.findViewById(R.id.meal)
         var price: TextView = view.findViewById(R.id.price)
         var size: TextView = view.findViewById(R.id.size)
@@ -32,10 +33,12 @@ class MealRecyclerAdapter(private val mealList: List<Meal>, private val context:
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        //Assigning values to views
         holder.title.text = mealList[position].name
         holder.price.text = mealList[position].price.toString()
         holder.size.text = mealList[position].size
 
+        //Addons check, if there are any, then it is possible to click
         if (mealList[position].addons.size>0){
             holder.showAddOns.onClick {
                 val intent = Intent(context, AddOns::class.java)

@@ -18,6 +18,7 @@ import com.hendraanggrian.widget.ExpandableRecyclerView
 class MealCategoryRecyclerAdapter(private val mealList: List<Meal>, private val context: Context, private val layoutManager: LinearLayoutManager) : ExpandableRecyclerView.Adapter<MealCategoryRecyclerAdapter.MyViewHolder>(layoutManager) {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        //Viewholder for meal category row layout - expendable item is main holder
         private val item: ExpandableItem = view.findViewById(R.id.mealRow) as ExpandableItem
         var title: TextView = item.headerLayout.findViewById(R.id.mealCategory)
         var meals: RecyclerView = item.contentLayout.findViewById(R.id.mealsList)
@@ -32,8 +33,10 @@ class MealCategoryRecyclerAdapter(private val mealList: List<Meal>, private val 
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         super.onBindViewHolder(holder, position)
-        var categoryMeals: ArrayList<Meal> = arrayListOf()
+        //Initialise list
+        val categoryMeals: ArrayList<Meal> = arrayListOf()
 
+        //Get only meals with unique categories
         var meal = Meal()
         var category = ""
         var order = 0
@@ -51,8 +54,10 @@ class MealCategoryRecyclerAdapter(private val mealList: List<Meal>, private val 
             }
         }
 
+        //Assign data to view
         holder.title.text = meal.category
 
+        //Wrap content for recycler view
         holder.meals.layoutParams.height = ConstraintLayout.LayoutParams.WRAP_CONTENT
 
         val mAdapter = MealRecyclerAdapter(categoryMeals, context)
@@ -63,6 +68,7 @@ class MealCategoryRecyclerAdapter(private val mealList: List<Meal>, private val 
     }
 
     override fun getItemCount(): Int {
+        //Get only meals with unique categories
         var category = ""
         var size = 0
         mealList.forEach {
